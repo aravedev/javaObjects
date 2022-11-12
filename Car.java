@@ -102,4 +102,13 @@ public class Car {
         System.out.println("You bought a beautiful " + this.year + " " + this.color + " " + this.make + " for " + this.price +" .");
         System.out.println("Please drive safely");
     }
+
+    public String toString(){
+        return "Make: " + this.make + ".\n"+
+                "Price: " + this.price +".\n"+
+                "Year: " + this.year +".\n"+
+                "Color: " + this.color +".\n"+
+                "Parts: " + Arrays.toString(parts) + ".\n";
+
+    }
 }

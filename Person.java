@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Person {
@@ -78,4 +79,14 @@ public class Person {
         System.out.println("Your seat number is: " + number);
         this.seatNumber = number;
     }
+
+    public String toString() {
+        return "Name: " + this.name + "\n"
+                +  "Nationality: " + this.nationality + "\n"
+                +  "Date of Birth: " + this.dateOfBirth + "\n"
+                +  "Seat Number: " + this.seatNumber + "\n"
+                +  "Passport: " + Arrays.toString(this.passport) + "\n";
+    }
+
+
 }

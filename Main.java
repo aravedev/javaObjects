@@ -33,42 +33,25 @@ public class Main {
         double newPrice= nissan.getPrice()/2;
         nissan.setPrice(newPrice);
 
-        // Using getters
-        //System.out.println(nissan.getColor());
-
-        //System.out.println(Arrays.toString(nissan.parts));
-
-
-        /**
-
-         // Using actions
-         nissan.drive();
-         dodge.drive();
-
-        System.out.println("This " + nissan.getMake() + " is worth $" + nissan.getPrice() +
-                " .It was built in "+ nissan.getYear() + " . It is "+ nissan.getColor()+ "\n");
-
-        System.out.println("This nissan2 " + nissan2.getMake() + " is worth $" + nissan2.getPrice() +
-                " .It was built in "+ nissan2.getYear() + " . It is "+ nissan2.getColor()+ "\n");
-
-        */
-
-        /**
-        Car dodge = new Car("Dodge",11000,2019,"Blue");
-        dodge.setColor("Blacky");
-        double newPriceTwo = dodge.getPrice()/2;
-        dodge.setPrice(newPriceTwo);
+        // Creating an array of objects with cars
+        Car[] cars = new Car[]{
+                new Car("Nissan",5000,2020,"Red",parts),
+                new Car("Dodge",11000,2019,"Blue",parts),
+                new Car("Nissan",5000,2020,"yellow", new String[]{"tires","filter"})
+        };
 
 
-        dodge.make = "Dodge";
-        dodge.price=11000;
-        dodge.year = 2019;
-        dodge.color = "blue";
+       // System.out.println(nissan);
 
-         System.out.println("This " + dodge.getMake() + " is worth $" + dodge.getPrice() +
-         " .It was built in "+ dodge.getYear() + " . It is "+ dodge.getColor()+ "\n");
-        */
+        Dearlership dearlership = new Dearlership();
 
+        for (int i = 0; i < cars.length; i++) {
+            dearlership.setCar(cars[i],i);
+        }
 
+        // Creating a copy of the previous object inside the dealership class "private Car[] cars;"
+        Car newCar = dearlership.getCar(0);
+        newCar.setColor("Bluesshh");
+        System.out.println(dearlership.getCar(0));
     }
 }
